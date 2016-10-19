@@ -1,0 +1,450 @@
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+html {
+  font-size: 100%;
+  box-sizing: border-box; }
+
+body {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 18px;
+  overflow-x: hidden;
+  line-height: 1.45;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased; }
+
+input.checkbox-toggle-state {
+  width: 1px;
+  height: 1px;
+  border: none;
+  display: none; }
+
+li {
+  list-style: none; }
+
+a {
+  text-decoration: none; }
+
+section {
+  width: 100%;
+  margin-bottom: 100px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; }
+  section::after {
+    clear: both;
+    content: "";
+    display: block; }
+  section h3 {
+    margin-bottom: 20px; }
+  section p {
+    width: 90%;
+    margin: auto; }
+    @media screen and (min-width: 500px) {
+      section p {
+        width: 70%; } }
+
+.prime::after {
+  display: block;
+  width: 70px;
+  height: 2px;
+  background: #115724;
+  content: "";
+  margin: 50px auto; }
+
+input, textarea, button, .btn {
+  border-radius: 5px; }
+
+.btn-direction {
+  display: inline-block;
+  height: 100px;
+  width: 50px;
+  background-color: rgba(255, 255, 255, 0.6);
+  color: rgba(0, 0, 0, 0.6); }
+  .btn-direction:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: rgba(0, 0, 0, 0.9); }
+
+footer {
+  text-align: center;
+  margin: 30px auto; }
+  footer span {
+    margin-right: 5px; }
+
+nav {
+  width: 100%;
+  position: fixed;
+  max-height: 48px;
+  top: 0;
+  left: 0;
+  z-index: 7;
+  background-color: rgba(255, 255, 255, 0.9); }
+
+.main-nav {
+  position: relative;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 100%;
+  max-height: 48px;
+  transition: background-color 0.5s ease-in-out, max-height 0.5s ease-in-out 1s; }
+  .main-nav::after {
+    clear: both;
+    content: "";
+    display: block; }
+
+span.menu-hamburger, span.menu-hamburger label, span.menuicon-bread {
+  height: 48px;
+  width: 48px; }
+
+span.menu-hamburger {
+  display: inline-block;
+  position: relative; }
+  @media screen and (min-width: 500px) {
+    span.menu-hamburger {
+      display: none; } }
+
+span.menu-hamburger label {
+  display: block;
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.4s; }
+  span.menu-hamburger label:hover {
+    opacity: 0.65; }
+
+span.menuicon-bread {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3; }
+  span.menuicon-bread.menuicon-bread-top {
+    z-index: 4;
+    transform: rotate(0);
+    transition: transform 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99); }
+  span.menuicon-bread.menuicon-bread-bottom {
+    transform: rotate(0);
+    transition: transform 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99); }
+
+span.menuicon-bread-crust {
+  height: 1px;
+  width: 17px;
+  display: block;
+  background: black;
+  position: absolute;
+  left: 16px;
+  z-index: 1;
+  transition: transform 0.2s; }
+  span.menuicon-bread-crust.menuicon-bread-crust-top {
+    top: 23px;
+    transform: translateY(-3px); }
+  span.menuicon-bread-crust.menuicon-bread-crust-bottom {
+    bottom: 23px;
+    transform: translateY(3px); }
+
+.menu-tray {
+  visibility: hidden;
+  max-height: 0;
+  width: 100%;
+  transition: max-height 0.5s cubic-bezier(0.28, 0.11, 0.32, 1) 0.4s, visibility 0s linear 1s; }
+  @media screen and (min-width: 500px) {
+    .menu-tray {
+      width: 300px;
+      display: inline-block;
+      visibility: visible;
+      max-height: 48px; } }
+
+ul.right {
+  padding: 10px 30px 24px 30px;
+  transform: translateY(-150px);
+  opacity: 0;
+  transition: transform 1s cubic-bezier(0.23, 1, 0.32, 1) 0.5s, opacity 0.7s cubic-bezier(0.23, 1, 0.32, 1) 0.2s; }
+  ul.right li {
+    line-height: 48px; }
+    ul.right li a {
+      border-bottom: 1px solid #dad4d4;
+      display: block;
+      height: 48px;
+      color: rgba(0, 0, 0, 0.8);
+      opacity: 0;
+      transform: translateY(-25px);
+      transition: all 0.5s ease;
+      cursor: pointer; }
+    ul.right li:hover {
+      color: black; }
+    ul.right li:last-child a {
+      border-bottom: 0; }
+    ul.right li:nth-child(1) a {
+      transition-delay: 0.07s; }
+    ul.right li:nth-child(2) a {
+      transition-delay: 0.14s; }
+    ul.right li:nth-child(3) a {
+      transition-delay: 0.21s; }
+    ul.right li:nth-child(4) a {
+      transition-delay: 0.28s; }
+  @media screen and (min-width: 500px) {
+    ul.right {
+      padding: 0;
+      opacity: 1;
+      transform: none; }
+      ul.right li {
+        display: inline-block;
+        text-align: center;
+        margin: 0px 10px;
+        height: 48px; }
+        ul.right li a {
+          border-bottom: none;
+          opacity: 1;
+          transform: none; } }
+
+.menu-social {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1; }
+
+.btn-facebook {
+  float: right;
+  margin: 7px 10px;
+  padding: 2px 8px;
+  background-color: #3b5998;
+  background-image: url("../Facebook-logo-white.png");
+  background-size: 70px 15px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 1px solid #29487d;
+  color: transparent; }
+  .btn-facebook:hover {
+    background-color: #29487d; }
+  .btn-facebook:active {
+    background-color: #1d335a;
+    border-color: #1d335a; }
+
+.checkbox-toggle-state.active-state ~ nav .main-nav {
+  background-color: white;
+  max-height: 278px;
+  transition: background-color 0.05s ease;
+  transition-property: background-color, -webkit-backdrop-filter;
+  transition-property: background-color, backdrop-filter;
+  transition-property: background-color, backdrop-filter, -webkit-backdrop-filter; }
+.checkbox-toggle-state.active-state ~ nav .menu-tray {
+  max-height: 278px;
+  pointer-events: auto;
+  -webkit-overflow-scrolling: touch;
+  visibility: visible;
+  transition-delay: 0.2s, 0s; }
+.checkbox-toggle-state.active-state ~ nav ul.right {
+  opacity: 1;
+  transform: translateY(0px);
+  transition-delay: 0.2s, 0.4s; }
+  .checkbox-toggle-state.active-state ~ nav ul.right li a {
+    opacity: 1;
+    transform: translateY(0px); }
+  .checkbox-toggle-state.active-state ~ nav ul.right li:nth-child(1) a {
+    transition-delay: 0.49s; }
+  .checkbox-toggle-state.active-state ~ nav ul.right li:nth-child(2) a {
+    transition-delay: 0.42s; }
+  .checkbox-toggle-state.active-state ~ nav ul.right li:nth-child(3) a {
+    transition-delay: 0.35s; }
+  .checkbox-toggle-state.active-state ~ nav ul.right li:nth-child(4) a {
+    transition-delay: 0.28s; }
+.checkbox-toggle-state.active-state ~ nav .menu-hamburger label {
+  transform: rotate(90deg); }
+.checkbox-toggle-state.active-state ~ nav .menuicon-bread-top {
+  transform: rotate(45deg); }
+.checkbox-toggle-state.active-state ~ nav .menuicon-bread-bottom {
+  transform: rotate(-45deg); }
+.checkbox-toggle-state.active-state ~ nav .menuicon-bread-crust-top, .checkbox-toggle-state.active-state ~ nav .menuicon-bread-crust-bottom {
+  transform: translateY(0); }
+.checkbox-toggle-state.active-state ~ nav .menuicon-bread-crust-bottom {
+  transition: transform 0s, 0.2s; }
+
+.banner {
+  text-align: center;
+  padding-top: 48px;
+  margin-bottom: 50px;
+  height: 100vh;
+  width: 100%;
+  background-image: url("../pajuris-banner-mobile.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  background-attachment: fixed;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center; }
+  @media screen and (min-width: 500px) {
+    .banner {
+      height: 600px;
+      background-image: url("../pajuris-banner.jpg"); } }
+
+.hero {
+  width: 100%;
+  height: 424px;
+  background-image: url("../zalioji-zeme-logo-mobile.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top center; }
+  @media screen and (min-width: 500px) {
+    .hero {
+      width: 500px;
+      background-image: url("../zalioji-zeme-logo.png"); } }
+  .hero h1, .hero h2 {
+    display: none; }
+
+#veikla {
+  position: relative; }
+
+.gallery {
+  width: 100%;
+  height: 550px;
+  position: relative; }
+  @media screen and (min-width: 500px) {
+    .gallery {
+      height: 700px; }
+      .gallery:hover .btn-direction {
+        opacity: 1; } }
+  .gallery .btn-direction {
+    display: none; }
+    @media screen and (min-width: 500px) {
+      .gallery .btn-direction {
+        display: block;
+        opacity: 0;
+        transition: opacity 0.4s ease-in-out;
+        position: absolute;
+        z-index: 3;
+        top: 200px; }
+        .gallery .btn-direction.next {
+          right: 0;
+          margin-right: 10px; }
+        .gallery .btn-direction.prev {
+          left: 0;
+          margin-left: 10px; } }
+
+.arrow {
+  width: 100%;
+  display: block;
+  position: absolute;
+  z-index: 6;
+  top: 50%;
+  margin-top: -17px; }
+
+.figure-wrapper {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out; }
+  .figure-wrapper.active {
+    opacity: 1;
+    z-index: 2; }
+  .figure-wrapper figcaption {
+    margin-top: 50px; }
+  .figure-wrapper p {
+    text-align: center; }
+
+.gallery-nav {
+  position: absolute;
+  width: 100%;
+  top: 60%;
+  z-index: 5;
+  background: none; }
+  @media screen and (min-width: 500px) {
+    .gallery-nav {
+      top: 75%; } }
+
+.dot-list {
+  width: 70%;
+  margin: 0 auto; }
+
+.dot {
+  height: 4px;
+  width: 40px;
+  background-color: #115724;
+  display: inline-block;
+  margin: 0 10px; }
+  .dot.active {
+    background-color: #74c145;
+    transition: background-color 0.4s ease; }
+
+.touchInterface {
+  width: 100%;
+  height: 300px;
+  position: absolute;
+  z-index: 4; }
+  @media screen and (min-width: 500px) {
+    .touchInterface {
+      height: 500px;
+      width: 80%;
+      left: 10%; } }
+
+.photo {
+  height: 300px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; }
+  .photo#pic-1 {
+    background-image: url("../veikla-1-mobile.jpg"); }
+  .photo#pic-2 {
+    background-image: url("../veikla-2-mobile.jpg"); }
+  .photo#pic-3 {
+    background-image: url("../veikla-3-mobile.jpg"); }
+  .photo#pic-4 {
+    background-image: url("../veikla-4-mobile.jpg"); }
+  @media screen and (min-width: 500px) {
+    .photo {
+      height: 500px; }
+      .photo#pic-1 {
+        background-image: url("../veikla-1.jpg"); }
+      .photo#pic-2 {
+        background-image: url("../veikla-2.jpg"); }
+      .photo#pic-3 {
+        background-image: url("../veikla-3.jpg"); }
+      .photo#pic-4 {
+        background-image: url("../veikla-4.jpg"); } }
+
+.contact {
+  position: relative;
+  width: 90%;
+  margin: 0px auto;
+  text-align: left; }
+  .contact label, .contact input, .contact textarea {
+    display: block;
+    width: 100%; }
+  .contact label {
+    margin-bottom: 5px;
+    margin-left: 5px; }
+  .contact input, .contact textarea {
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #115724; }
+  .contact button {
+    padding: 5px 30px;
+    font-size: 16px;
+    background-color: #74c145;
+    border: none;
+    color: white;
+    -webkit-appearance: none;
+    float: right; }
+    .contact button:hover {
+      background-color: #538a32; }
+    .contact button:active {
+      background-color: #3f6728; }
+  @media screen and (min-width: 500px) {
+    .contact {
+      width: 50%;
+      min-width: 350px; } }
