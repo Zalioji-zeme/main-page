@@ -45,6 +45,8 @@ section {
     content: "";
     display: block; }
   section h3 {
+    font-size: 1.5em;
+    font-weight: 400;
     margin-bottom: 20px; }
   section p {
     width: 90%;
@@ -97,6 +99,7 @@ nav {
   width: 100%;
   height: 100%;
   max-height: 48px;
+  -webkit-transition: background-color 0.5s ease-in-out, max-height 0.5s ease-in-out 1s;
   transition: background-color 0.5s ease-in-out, max-height 0.5s ease-in-out 1s; }
   .main-nav::after {
     clear: both;
@@ -119,7 +122,10 @@ span.menu-hamburger label {
   position: absolute;
   z-index: 3;
   top: 0;
-  transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.4s; }
+  -webkit-transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), -webkit-transform 0.4s;
+  transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), -webkit-transform 0.4s;
+  transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.4s;
+  transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.4s, -webkit-transform 0.4s; }
   span.menu-hamburger label:hover {
     opacity: 0.65; }
 
@@ -130,11 +136,19 @@ span.menuicon-bread {
   z-index: 3; }
   span.menuicon-bread.menuicon-bread-top {
     z-index: 4;
-    transform: rotate(0);
-    transition: transform 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99); }
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    -webkit-transition: -webkit-transform 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+    transition: -webkit-transform 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+    transition: transform 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+    transition: transform 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99), -webkit-transform 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99); }
   span.menuicon-bread.menuicon-bread-bottom {
-    transform: rotate(0);
-    transition: transform 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99); }
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    -webkit-transition: -webkit-transform 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+    transition: -webkit-transform 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+    transition: transform 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+    transition: transform 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99), -webkit-transform 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99); }
 
 span.menuicon-bread-crust {
   height: 1px;
@@ -144,18 +158,24 @@ span.menuicon-bread-crust {
   position: absolute;
   left: 16px;
   z-index: 1;
-  transition: transform 0.2s; }
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s; }
   span.menuicon-bread-crust.menuicon-bread-crust-top {
     top: 23px;
-    transform: translateY(-3px); }
+    -webkit-transform: translateY(-3px);
+            transform: translateY(-3px); }
   span.menuicon-bread-crust.menuicon-bread-crust-bottom {
     bottom: 23px;
-    transform: translateY(3px); }
+    -webkit-transform: translateY(3px);
+            transform: translateY(3px); }
 
 .menu-tray {
   visibility: hidden;
   max-height: 0;
   width: 100%;
+  -webkit-transition: max-height 0.5s cubic-bezier(0.28, 0.11, 0.32, 1) 0.4s, visibility 0s linear 1s;
   transition: max-height 0.5s cubic-bezier(0.28, 0.11, 0.32, 1) 0.4s, visibility 0s linear 1s; }
   @media screen and (min-width: 500px) {
     .menu-tray {
@@ -166,9 +186,13 @@ span.menuicon-bread-crust {
 
 ul.right {
   padding: 10px 30px 24px 30px;
-  transform: translateY(-150px);
+  -webkit-transform: translateY(-150px);
+          transform: translateY(-150px);
   opacity: 0;
-  transition: transform 1s cubic-bezier(0.23, 1, 0.32, 1) 0.5s, opacity 0.7s cubic-bezier(0.23, 1, 0.32, 1) 0.2s; }
+  -webkit-transition: opacity 0.7s cubic-bezier(0.23, 1, 0.32, 1) 0.2s, -webkit-transform 1s cubic-bezier(0.23, 1, 0.32, 1) 0.5s;
+  transition: opacity 0.7s cubic-bezier(0.23, 1, 0.32, 1) 0.2s, -webkit-transform 1s cubic-bezier(0.23, 1, 0.32, 1) 0.5s;
+  transition: transform 1s cubic-bezier(0.23, 1, 0.32, 1) 0.5s, opacity 0.7s cubic-bezier(0.23, 1, 0.32, 1) 0.2s;
+  transition: transform 1s cubic-bezier(0.23, 1, 0.32, 1) 0.5s, opacity 0.7s cubic-bezier(0.23, 1, 0.32, 1) 0.2s, -webkit-transform 1s cubic-bezier(0.23, 1, 0.32, 1) 0.5s; }
   ul.right li {
     line-height: 48px; }
     ul.right li a {
@@ -177,7 +201,9 @@ ul.right {
       height: 48px;
       color: rgba(0, 0, 0, 0.8);
       opacity: 0;
-      transform: translateY(-25px);
+      -webkit-transform: translateY(-25px);
+              transform: translateY(-25px);
+      -webkit-transition: all 0.5s ease;
       transition: all 0.5s ease;
       cursor: pointer; }
     ul.right li:hover {
@@ -185,18 +211,23 @@ ul.right {
     ul.right li:last-child a {
       border-bottom: 0; }
     ul.right li:nth-child(1) a {
-      transition-delay: 0.07s; }
+      -webkit-transition-delay: 0.07s;
+              transition-delay: 0.07s; }
     ul.right li:nth-child(2) a {
-      transition-delay: 0.14s; }
+      -webkit-transition-delay: 0.14s;
+              transition-delay: 0.14s; }
     ul.right li:nth-child(3) a {
-      transition-delay: 0.21s; }
+      -webkit-transition-delay: 0.21s;
+              transition-delay: 0.21s; }
     ul.right li:nth-child(4) a {
-      transition-delay: 0.28s; }
+      -webkit-transition-delay: 0.28s;
+              transition-delay: 0.28s; }
   @media screen and (min-width: 500px) {
     ul.right {
       padding: 0;
       opacity: 1;
-      transform: none; }
+      -webkit-transform: none;
+              transform: none; }
       ul.right li {
         display: inline-block;
         text-align: center;
@@ -205,7 +236,8 @@ ul.right {
         ul.right li a {
           border-bottom: none;
           opacity: 1;
-          transform: none; } }
+          -webkit-transform: none;
+                  transform: none; } }
 
 .menu-social {
   position: absolute;
@@ -233,8 +265,10 @@ ul.right {
 .checkbox-toggle-state.active-state ~ nav .main-nav {
   background-color: white;
   max-height: 278px;
+  -webkit-transition: background-color 0.05s ease;
   transition: background-color 0.05s ease;
   transition-property: background-color, -webkit-backdrop-filter;
+  -webkit-transition-property: background-color, -webkit-backdrop-filter;
   transition-property: background-color, backdrop-filter;
   transition-property: background-color, backdrop-filter, -webkit-backdrop-filter; }
 .checkbox-toggle-state.active-state ~ nav .menu-tray {
@@ -242,32 +276,47 @@ ul.right {
   pointer-events: auto;
   -webkit-overflow-scrolling: touch;
   visibility: visible;
-  transition-delay: 0.2s, 0s; }
+  -webkit-transition-delay: 0.2s, 0s;
+          transition-delay: 0.2s, 0s; }
 .checkbox-toggle-state.active-state ~ nav ul.right {
   opacity: 1;
-  transform: translateY(0px);
-  transition-delay: 0.2s, 0.4s; }
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+  -webkit-transition-delay: 0.2s, 0.4s;
+          transition-delay: 0.2s, 0.4s; }
   .checkbox-toggle-state.active-state ~ nav ul.right li a {
     opacity: 1;
-    transform: translateY(0px); }
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px); }
   .checkbox-toggle-state.active-state ~ nav ul.right li:nth-child(1) a {
-    transition-delay: 0.49s; }
+    -webkit-transition-delay: 0.49s;
+            transition-delay: 0.49s; }
   .checkbox-toggle-state.active-state ~ nav ul.right li:nth-child(2) a {
-    transition-delay: 0.42s; }
+    -webkit-transition-delay: 0.42s;
+            transition-delay: 0.42s; }
   .checkbox-toggle-state.active-state ~ nav ul.right li:nth-child(3) a {
-    transition-delay: 0.35s; }
+    -webkit-transition-delay: 0.35s;
+            transition-delay: 0.35s; }
   .checkbox-toggle-state.active-state ~ nav ul.right li:nth-child(4) a {
-    transition-delay: 0.28s; }
+    -webkit-transition-delay: 0.28s;
+            transition-delay: 0.28s; }
 .checkbox-toggle-state.active-state ~ nav .menu-hamburger label {
-  transform: rotate(90deg); }
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg); }
 .checkbox-toggle-state.active-state ~ nav .menuicon-bread-top {
-  transform: rotate(45deg); }
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg); }
 .checkbox-toggle-state.active-state ~ nav .menuicon-bread-bottom {
-  transform: rotate(-45deg); }
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg); }
 .checkbox-toggle-state.active-state ~ nav .menuicon-bread-crust-top, .checkbox-toggle-state.active-state ~ nav .menuicon-bread-crust-bottom {
-  transform: translateY(0); }
+  -webkit-transform: translateY(0);
+          transform: translateY(0); }
 .checkbox-toggle-state.active-state ~ nav .menuicon-bread-crust-bottom {
-  transition: transform 0s, 0.2s; }
+  -webkit-transition: 0.2s, -webkit-transform 0s;
+  transition: 0.2s, -webkit-transform 0s;
+  transition: transform 0s, 0.2s;
+  transition: transform 0s, 0.2s, -webkit-transform 0s; }
 
 .banner {
   text-align: center;
@@ -281,11 +330,14 @@ ul.right {
   background-position: top center;
   background-attachment: fixed;
   display: -ms-flexbox;
+  display: -webkit-box;
   display: flex;
   -ms-flex-pack: center;
-      justify-content: center;
+      -webkit-box-pack: center;
+          justify-content: center;
   -ms-flex-align: center;
-      align-items: center; }
+      -webkit-box-align: center;
+          align-items: center; }
   @media screen and (min-width: 500px) {
     .banner {
       height: 600px;
@@ -323,6 +375,7 @@ ul.right {
       .gallery .btn-direction {
         display: block;
         opacity: 0;
+        -webkit-transition: opacity 0.4s ease-in-out;
         transition: opacity 0.4s ease-in-out;
         position: absolute;
         z-index: 3;
@@ -347,11 +400,12 @@ ul.right {
   top: 0;
   z-index: 1;
   opacity: 0;
+  -webkit-transition: opacity 0.4s ease-in-out;
   transition: opacity 0.4s ease-in-out; }
   .figure-wrapper.active {
     opacity: 1;
     z-index: 2; }
-  .figure-wrapper figcaption {
+  .figure-wrapper .figcaption {
     margin-top: 50px; }
   .figure-wrapper p {
     text-align: center; }
@@ -378,6 +432,7 @@ ul.right {
   margin: 0 10px; }
   .dot.active {
     background-color: #74c145;
+    -webkit-transition: background-color 0.4s ease;
     transition: background-color 0.4s ease; }
 
 .touchInterface {

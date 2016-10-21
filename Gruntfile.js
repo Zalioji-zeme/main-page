@@ -5,6 +5,9 @@ module.exports = function(grunt) {
       compile: {
         files: {
           'index.html' : 'src/templates/*.pug'
+        },
+        options: {
+          pretty: true
         }
       }
     },
